@@ -1,3 +1,6 @@
+### 画面遷移図   
+https://www.figma.com/design/aseiWjjooNL4DW6ZvSHE6w/Untitled?node-id=0-1&node-type=canvas&t=snL1TiijAfhatKjs-0     
+
 ■ サービス概要  
 このサービスは、ユーザーが性格診断を受けることで、鎌倉時代の仏教僧やその歴史との関連性を見出し、学びを深めることを目的とした診断ツールです。
 診断結果をもとに、ユーザーに最も適した仏教僧を提案し、興味関心が薄いユーザーでも、その歴史に触れることができます。自分にぴったりの仏教僧が
