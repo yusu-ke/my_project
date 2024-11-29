@@ -1,3 +1,6 @@
+### ER図
+https://app.diagrams.net/#G11yH8WB7Ylm5nDIIfABY7_op-rlKUFVgt#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D
+
 ### 画面遷移図   
 https://www.figma.com/design/aseiWjjooNL4DW6ZvSHE6w/Untitled?node-id=0-1&node-type=canvas&t=snL1TiijAfhatKjs-0     
 
