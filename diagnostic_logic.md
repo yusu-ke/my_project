@@ -17,6 +17,7 @@
 
 ２.Active Modelを使用しDBに異存ないモデルを作成。このモデルにてスコアの計算を行います。今回は`PersonalityTest`クラスとします。
 ```
+#各設問ごとに比重を変更
 SCORE_MAPPING = {
     question1: { '1' => 1, '2' => 2, '3' => 2, '4' => 4, '5' => 5 }, # 法然: 5
     question2: { '1' => 1, '2' => 2, '3' => 5, '4' => 4, '5' => 2 }, # 一遍: 5
@@ -27,7 +28,8 @@ SCORE_MAPPING = {
     question7: { '1' => 2, '2' => 2, '3' => 3, '4' => 4, '5' => 5 }, # 法然: 5
     question8: { '1' => 1, '2' => 2, '3' => 4, '4' => 4, '5' => 5 }  # 日蓮: 5
   }
-
+  
+#合計値の計算
   def calculate_score
     score = 0
     score += SCORE_MAPPING[:question1][question1] if question1
@@ -41,9 +43,10 @@ SCORE_MAPPING = {
     score
   end
 
+#calculate_scoreで計算されたtotal_scoreがstart_score から end_score の範囲に含まれているかを判定
   def get_result
     total_score = calculate_score
-    result = PersonalityResult.all.find do |result|
+    result = Monk.all.find do |result|
       (result.start_score..result.end_score).include?(total_score)
     end
     result
