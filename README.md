@@ -1,3 +1,6 @@
+### ER図
+[![Image from Gyazo](https://i.gyazo.com/5a4434e024ef4bfb768b76885cdee7a1.png)](https://gyazo.com/5a4434e024ef4bfb768b76885cdee7a1)
+
 ### 画面遷移図   
 https://www.figma.com/design/aseiWjjooNL4DW6ZvSHE6w/Untitled?node-id=0-1&node-type=canvas&t=snL1TiijAfhatKjs-0     
 
