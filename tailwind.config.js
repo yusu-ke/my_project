@@ -4,5 +4,19 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/assets/stylesheets/**/*.css',
     './app/javascript/**/*.js'
-  ]
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Sawarabi Mincho', 'serif'],
+      },
+    },
+    screens: {
+      'xs': '480px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
+  },
 }
