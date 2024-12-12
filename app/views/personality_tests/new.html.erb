@@ -1,0 +1,24 @@
+<%= form_with model: @personality_test, url: "#", method: :post, data: { turbo: false} do |f| %>
+  <div class= "text-center" data-controller="step-form">
+    <% @questions.each_with_index do |question, index| %>
+      <div id="step<%= index + 1 %>" style="display: <%= index.zero? ? 'block' : 'none' %>;" data-step-form-target="step">
+        <%= f.label "answers[#{question.id}]", question.content%>
+        <div class="flex justify-center space-x-5"
+          <p>当てはまる</p>
+          <p>当てはまらない</p>
+        </div>
+        <div class="space-x-4">
+          <% question.score_mappings.each do |mapping| %>
+            <%= radio_button_tag "personality_test[answers][#{question.id}]", mapping.option, false, data: { action: "change->step-form#autoNext"} %>
+          <% end %>
+        </div>
+        <% if index.positive? %>
+          <button type="button" data-action="step-form#prevStep">戻る</button>
+        <% end %>
+        <% if index == @questions.size - 1 %>
+          <%= f.submit "診断する", class: "btn btn-primary", data: { action: "step-form#submitForm"} %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
