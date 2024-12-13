@@ -17,6 +17,6 @@ class PersonalityTest
 
   def get_result
     total_score = calculate_score
-    Monk.find_by('start_score <= ? AND end_score >= ?', total_score, total_score)
+    Monk.find_by("start_score <= ? AND end_score >= ?", total_score, total_score)
   end
 end
