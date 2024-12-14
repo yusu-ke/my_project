@@ -9,15 +9,19 @@ export default class extends Controller {
     this.showCurrentStep();
   }
 
-  autoNext() {
-    const delay = 700;
+  autoNext(event) {
+    const selectedRadio = event.target;
 
-    setTimeout(() => {
-      if (this.currentStep < this.stepTargets.length) {
-        this.currentStep++;
-        this.showCurrentStep()
-      }
-    }, delay);
+    if (selectedRadio && selectedRadio.checked) {
+      const delay = 700;
+    
+      setTimeout(() => {
+        if (this.currentStep < this.stepTargets.length) {
+          this.currentStep++;
+          this.showCurrentStep()
+        }
+      }, delay);
+    }
   }
 
 
@@ -45,7 +49,7 @@ export default class extends Controller {
   }
 
   nextStep() {
-    if (this.validateCurrentStep()) {
+    if (this.wasValidStep() || this.validateCurrentStep()) {
       if (this.currentStep < this.stepTargets.length) {
         this.currentStep++;
         this.showCurrentStep();
@@ -67,5 +71,18 @@ export default class extends Controller {
       event.preventDefault();
       alert("選択してください")
     }
+  }
+
+  wasValidStep() {
+    const currentStepElement = this.stepTargets[this.currentStep - 1];
+    const radioGroup = currentStepElement.querySelectorAll('input[type="radio"]');
+    let isValid = false;
+  
+    radioGroup.forEach((radio) => {
+      if (radio.checked) {
+        isValid = true;
+      }
+    });
+    return isValid; // Return true if at least one radio button is selected
   }
 }

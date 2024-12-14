@@ -4,21 +4,27 @@
       <div id="step<%= index + 1 %>" 
            class="flex flex-col justify-center items-center space-y-6 <%= index.zero? ? '' : 'hidden' %>" 
            data-step-form-target="step">
-        
+
+        <div class="text-center text-lg font-bold text-gray-700">
+          <p>第<%= index + 1 %>/12問</p>
+        </div>
+
         <div class="text-center">
           <%= f.label "answers[#{question.id}]", question.content, class: "block text-lg font-semibold text-gray-700" %>
         </div>
 
         <div class="flex justify-between items-center w-full mt-4 text-sm text-gray-600">
           <p class="text-gray-600">当てはまらない</p>
+          <p class="text-gray-600"></p>
           <p class="text-gray-600">当てはまる</p>
         </div>
 
-        <div class="flex justify-center items-center space-x-4 mt-2">
+        <div id="radios" class="relative fustify-center items-center space-x-5 mt-2">
           <% question.score_mappings.each do |mapping| %>
             <%= radio_button_tag "personality_test[answers][#{question.id}]", mapping.option, false, 
               class: "form-radio h-6 w-6 text-indigo-500 focus:ring-indigo-400 focus:ring-offset-2",
               data: { action: "change->step-form#autoNext" } %>
+              
           <% end %>
         </div>
 
