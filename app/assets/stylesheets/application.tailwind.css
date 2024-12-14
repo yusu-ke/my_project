@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes fade-in1 {
+  0% { opacity: 0; transform: translate3d(0,-20px,0); }
+  100% { opacity: 1; transform: translate3d(0,0,0); }
+}
+
+.animation-fadeIn1 {
+  animation-name: fade-in1;
+  animation-duration: 2s; /* アニメーション時間 */
+  animation-timing-function: ease-out; /* アニメーションのイージング */
+  animation-delay: 0s; /* アニメーションの開始タイミング */
+  animation-iteration-count: 1; /* 繰り返し回数 */
+  animation-direction: normal; /* 一方向に動作する */
+  animation-fill-mode: forwards; /* アニメーション後のスタイルを保持する */
+}
+
+@keyframes fade_in2 {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+.animation-fadeIn2 {
+  animation-name: fade_in2;
+  animation-duration:4s;
+  animation-timing-function: ease-out;
+  animation-delay:0s;
+  animation-iteration-count:1;
+  animation-direction:normal;
+  animation-fill-mode: forwards;
+}
