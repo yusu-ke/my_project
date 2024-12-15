@@ -21,8 +21,10 @@
   </head>
 
   <body>
-    <%= render 'shared/header' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
+    <div class="gradation-image object-contain ">
+      <%= render 'shared/header' %>
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

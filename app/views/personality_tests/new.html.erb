@@ -1,5 +1,6 @@
+<div class="gradation-image object-contain ">
 <%= form_with model: @personality_test, url: personality_tests_path, method: :post, data: { turbo: false } do |f| %>
-  <div class="text-center max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10" data-controller="step-form">
+  <div class="text-center max-w-2xl mx-auto p-6 bg-gray-95 shadow-md rounded-lg mt-10" data-controller="step-form">
     <% @questions.each_with_index do |question, index| %>
       <div id="step<%= index + 1 %>" 
            class="flex flex-col justify-center items-center space-y-6 <%= index.zero? ? '' : 'hidden' %>" 
@@ -45,3 +46,4 @@
     <% end %>
   </div>
 <% end %>
+</div>
