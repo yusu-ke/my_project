@@ -7,15 +7,24 @@
   </div>
 
   <div class="text-center">
-    <p class="text-2xl font-bold text-gray-800 mb-2">
+    <p class="text-2xl font-bold text-gray-900 mb-2">
      <%= @result.name %> 
     </p>
-    <p class="text-lg font-medium text-gray-800 mb-2">
+    <p class="text-lg font-medium text-gray-900 mb-2">
     <%= @result.title %>
     </p>
-    <p class="text-lg font-medium text-gray-800 mb-2">
+    <p class="text-lg font-medium text-black-900 mb-2">
     <%= @result.description %> 
     </p>
+
+    <%= link_to "もう一度診断する", root_path, class: 'mt-9 inline-block bg-blue-200 hover:bg-blue-400 text-black font-semibold py-3 px-6 rounded-md shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50' %>
   </div>
-<div> 
+</div>
+
+
+<div class="flex justify-end mt-">
+  <a href="https://twitter.com/intent/tweet?text=あなたの診断結果は...%0A%0A<%= ERB::Util.url_encode(@result.name) %>%0A&hashtags=診断,名僧,歴史&url=<%= ERB::Util.url_encode(root_url) %>" 
+     target="_blank" rel="nofollow">
+    <i class="fa-brands fa-square-x-twitter fa-2x"></i>
+  </a>
 </div>
