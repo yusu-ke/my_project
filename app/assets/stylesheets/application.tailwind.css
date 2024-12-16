@@ -41,3 +41,9 @@
   min-height: 100vh;
   background-attachment: fixed;
 }
+
+@media (max-width: 930px) {
+  .gradation-image {
+    background-image: url("mobile_gradation.png");
+  }
+}
