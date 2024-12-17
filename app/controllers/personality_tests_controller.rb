@@ -18,7 +18,7 @@ class PersonalityTestsController < ApplicationController
   end
 
   def show
-    @result = Monk.find_by(id: session[: result])
+    @result = Monk.find_by(id: session[:result])
     unless @result
       redirect_to new_personality_test_path
     end
