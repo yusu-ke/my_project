@@ -6,7 +6,7 @@ module ApplicationHelper
       reverse: true,
       charset: "utf-8",
       description: "簡単診断であなたにぴったりな歴史的な名僧に出会うことができます。",
-      keywords: "仏教,性格診断,歴史",
+      keywords: "仏教, 性格診断 ,歴史",
       canonical: request.original_url,
       separator: "|",
       og: {
