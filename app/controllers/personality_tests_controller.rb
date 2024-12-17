@@ -12,7 +12,7 @@ class PersonalityTestsController < ApplicationController
       session[:result] = @result.id
       redirect_to personality_test_path(@result.id)
     else
-      flash[:alert]
+      flash[:alert] = "診断結果の取得に失敗しました。"
       render :new
     end
   end

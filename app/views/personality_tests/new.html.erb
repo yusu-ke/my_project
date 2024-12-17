@@ -2,8 +2,8 @@
   <%= form_with model: @personality_test, url: personality_tests_path, method: :post, data: { turbo: false } do |f| %>
     <div class="text-center max-w-2xl mx-auto p-6 bg-gray-90 shadow-md rounded-lg mt-10" data-controller="step-form">
       <% @questions.each_with_index do |question, index| %>
-        <div id="step<%= index + 1 %>" 
-             class="flex flex-col justify-center items-center space-y-6 <%= index.zero? ? '' : 'hidden' %>" 
+        <div id="step<%= index + 1 %>"
+             class="flex flex-col justify-center items-center space-y-6 <%= index.zero? ? '' : 'hidden' %>"
              data-step-form-target="step">
 
           <div class="text-center text-lg font-bold text-gray-700">
@@ -22,7 +22,7 @@
 
           <div id="radios" class="relative fustify-center items-center space-x-5 mt-2">
             <% question.score_mappings.each do |mapping| %>
-              <%= radio_button_tag "personality_test[answers][#{question.id}]", mapping.option, false, 
+              <%= radio_button_tag "personality_test[answers][#{question.id}]", mapping.option, false,
                 class: "form-radio h-6 w-6 text-indigo-500 focus:ring-indigo-400 focus:ring-offset-2",
                 data: { action: "change->step-form#autoNext" } %>
 
@@ -31,14 +31,14 @@
 
           <div class="flex justify-between w-full items-center mt-6">
             <% if index.positive? %>
-              <button type="button" data-action="step-form#prevStep" 
+              <button type="button" data-action="step-form#prevStep"
                 class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400">
                 戻る
               </button>
             <% end %>
 
             <% if index == @questions.size - 1 %>
-              <%= f.submit "診断する", 
+              <%= f.submit "診断する",
                 class: "px-6 py-2 inline-block bg-blue-200 hover:bg-blue-400 text-black font-semibold py-3 px-6 rounded-md shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50'",  data: { action: "step-form#submitForm"} %>
             <% end %>
           </div>
