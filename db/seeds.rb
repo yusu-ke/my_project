@@ -21,24 +21,22 @@ Monk.create!(
 Monk.create!(
   name: '親鸞聖人',
   title: "ともに悩み、ともに歩む伴走者型",
-  description: "あなたは周りの人の気持ちを深く理解でき、その人の立場に寄り添うことができる人です。困った人を振っておくことができず、支えあうことを大切にしています。しかし一方で、時には自分の感情を抑えすぎてしまうこともあるのかもしれません。しかしあなたのそのような姿勢が、周囲の人々にとってかけがえのない存在になっているのかもしれません。。",
+  description: "あなたは周りの人の気持ちを深く理解でき、その人の立場に寄り添うことができる人です。困った人を振っておくことができず、支えあうことを大切にしています。しかし一方で、時には自分の感情を抑えすぎてしまうこともあるのかもしれません。しかしあなたのそのような姿勢が、周囲の人々にとってかけがえのない存在になっているのかもしれません。",
   monk_description: "親鸞聖人(1173年～1262年)は、20年間比叡山で修行を積まれたのち、法然上人との出会いを通じて「どのような人であれ救済されるべき」という本願念仏の教えに出会いました。しかし、教えを広める中で様々な反発を受け、新潟県（当時の越後）に流罪となりました。その後も、関東で20年間、懸命に生きる人々とともに暮らし、その教えを説き続けました。また、親鸞聖人は自らも煩悩に悩み、苦しみ続けました。それでも人々と共に悩み、共に生きようとするその姿勢は、多くの人々に共感を与え、親しみを感じさせたのかもしれません。浄土真宗では尊敬の念をこめて聖人という尊称を用います。",
   start_score: 37,
   end_score: 42,
   image_path: 'shinran.jpg'
 )
 
-
 Monk.create!(
   name: '一遍上人',
   title: "みなを導くリ―ダー型",
-  description: "あなたは変化を恐れることなく、様々なアイデアを柔軟に取り入れ状況を改善することことができます。しかし、時には周囲との和を大切にするために一歩引くこともあるのかもしれません。また自分の意志に自信を持ち、一貫した考えに基づいた行動や発言ができます。",
+  description: "あなたは変化を恐れることなく、様々なアイデアを柔軟に取り入れ状況を改善することができます。しかし、時には周囲との和を大切にするために一歩引くこともあるのかもしれません。また自分の意志に自信を持ち、一貫した考えに基づいた行動や発言ができます。",
   monk_description: "一遍上人(1239年～1289年)は、彼を慕う多くの信者とともに全国を巡り、念仏の教えを広めました。彼は民衆の中に入り込み、共に歩むことで人々の信頼を築いていきました。その中で、念仏を唱えながら踊る「踊り念仏」を広め、これが各地で熱狂的な支持を得ました。この革新的な方法は、当時の仏教体制に対する挑戦であり、多くの人々を魅了しました。一遍上人の生き様から学べるのは、人々の中に入り、共に実践する姿勢です。彼は「共に歩む」ことで、周囲の人々を力強く導き、同じ目線でともに進んでいくリーダーシップを感じさせます。上人とは仏教における高僧への敬称です。",
   start_score: 32,
   end_score: 36,
   image_path: 'ippen.jpg'
 )
-
 
 Monk.create!(
   name: '日蓮聖人',
@@ -50,7 +48,6 @@ Monk.create!(
   image_path: 'nitiren.jpg'
 )
 
-
 Monk.create!(
   name: '栄西禅師',
   title: "柔軟な計画を立てる戦略型",
@@ -61,7 +58,6 @@ Monk.create!(
   image_path: 'eisai.jpg'
 )
 
-
 Monk.create!(
   name: '道元禅師',
   title: "自分を深く見つめる内省型",
@@ -71,8 +67,6 @@ Monk.create!(
   end_score: 19,
   image_path: 'dougen.jpg'
 )
-
-
 
 question1 = Question.find_or_create_by!(content: '周りの人の感情に敏感で共感する能力は高いほうだ。')
 question2 = Question.find_or_create_by!(content: 'ボランティアなどの関心は高いほうだ。')
@@ -135,28 +129,24 @@ ScoreMapping.create!(question: question8, option: 3, score: 2)
 ScoreMapping.create!(question: question8, option: 4, score: 3)
 ScoreMapping.create!(question: question8, option: 5, score: 4)
 
-# 戦略家 9問
 ScoreMapping.create!(question: question9, option: 1, score: 1)
 ScoreMapping.create!(question: question9, option: 2, score: 1)
 ScoreMapping.create!(question: question9, option: 3, score: 1)
 ScoreMapping.create!(question: question9, option: 4, score: 2)
 ScoreMapping.create!(question: question9, option: 5, score: 3)
 
-# 戦略家 10問
 ScoreMapping.create!(question: question10, option: 1, score: 1)
 ScoreMapping.create!(question: question10, option: 2, score: 1)
 ScoreMapping.create!(question: question10, option: 3, score: 1)
 ScoreMapping.create!(question: question10, option: 4, score: 2)
 ScoreMapping.create!(question: question10, option: 5, score: 3)
 
-#哲学者型 11問
 ScoreMapping.create!(question: question11, option: 1, score: 1)
 ScoreMapping.create!(question: question11, option: 2, score: 1)
 ScoreMapping.create!(question: question11, option: 3, score: 1)
 ScoreMapping.create!(question: question11, option: 4, score: 1)
 ScoreMapping.create!(question: question11, option: 5, score: 1)
 
-#哲学者型 12問
 ScoreMapping.create!(question: question12, option: 1, score: 1)
 ScoreMapping.create!(question: question12, option: 2, score: 1)
 ScoreMapping.create!(question: question12, option: 3, score: 1)

@@ -16,12 +16,12 @@ module ApplicationHelper
         type: 'website',
         url: request.original_url,
         image: image_url('ogp.png'),
-        local: 'ja-JP'
+        locale: 'ja-JP'
       },
-      # Twitter用の設定を個別で設定する
       twitter: {
-        card: 'summary_image',
-        site: '@',
+        card: 'summary_large_image',
+        title: '名僧マッチ（診断×歴史の名僧）',
+        description: '簡単診断であなたにぴったりな歴史的な名僧に出会うことができます。',
         image: image_url('ogp.png')
       }
     }
