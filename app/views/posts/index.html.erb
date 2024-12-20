@@ -1,0 +1,48 @@
+<div class="py-1 sm:py-8 lg:py-10 mt-5">
+  <div class="mx-auto max-w-screen-2xl px-2 md:px-8">
+
+    <div class="mb-5 md:mb-10">
+      <h1 class="mb-4 text-center text-2xl font-bold md:mb-6 lg:text-3xl">投稿一覧</h1>
+      <p class="py-3 mx-auto max-w-screen-md text-center md:text-lg">あなたが訪れた寺院・史跡名跡を共有</p>
+    </div>
+
+      <!-- カード全体 -->
+    <div class="flex flex-wrap justify-center pb-4 gap-2">
+      <% if @posts.present? %>
+        <% @posts.each do |post| %>
+          <!-- 個別カード -->
+          <div class="md:w-1/3 lg:w-1/4 overflow-hidden rounded-lg bg-white-90">
+            <!-- 写真 -->
+            <div class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
+              <%= image_tag "post_placeholder.png", loading: "lazy", alt: "Photo by Minh Pham", class: "absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" %>
+            </div>
+
+            <div class="p-4 sm:p-6">
+
+              <div class="flex items-center">
+                <h2 class="text-xl font-semibold"><%= post.temple_name %></h2>
+                ｜<span class="text-xs text-gray-700"><%= post.location %></span>
+              </div>
+
+              <p class="text-gray-500 mt-2 pt-2 break-words"><%= truncate(post.comment, length: 100) %></p>
+
+              <div class="mt-auto flex items-end justify-between">
+                <div class="flex items-center gap-2">
+                  <div>
+                    <span class="block text-indigo-500"><%= post.user.name %></span>
+                  </div>
+                </div>
+
+                <span class="px-2 py-1 text-sm text-gray-500">作成日時: <%= post.created_at.strftime("%Y-%m-%d") %></span>
+              </div>
+            </div>
+            
+          </div>
+
+        <% end %>
+      <% else %>
+        <p class="text-gray-700">掲示板がありません。</p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -21,11 +21,23 @@
       <p class="text-lg font-medium text-gray-900 mb-2">
         <%= @result.monk_description %>
       </p>
-      <%= link_to "もう一度診断する", root_path, class: 'mt-9 inline-block bg-blue-200 hover:bg-blue-400 text-black font-semibold py-3 px-6 rounded-md shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50' %>
+
+      <% if user_signed_in? %>
+        <div class="">
+          <%= link_to "もう一度診断する", root_path, class: 'mt-9 inline-block bg-blue-200 hover:bg-blue-400 text-black font-semibold py-3 px-6 rounded-md shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50' %>
+        </div>
+      <% else %>
+       
+          <%= link_to "もう一度診断する", root_path, class: 'mt-9 inline-block bg-blue-200 hover:bg-blue-400 text-black font-semibold py-3 px-6 rounded-md shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50' %>
+        <div class="pt-5">
+          <%= link_to "ユーザー登録であなたの訪れた場所を共有する", new_user_registration_path %>
+        </div>
+      <% end %>
+
     </div>
   </div>
 
-  <div class="flex justify-end py-5">
+  <div class="flex justify-end py-6">
     <div>
       <p class="text-sm  py-2 px-2">結果をシェアする</p>
     </div>
