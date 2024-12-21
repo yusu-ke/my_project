@@ -5,7 +5,10 @@
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="mx-auto max-w-lg rounded-lg border flex flex-col gap-4 p-4 md:p-8">
-          <%= render "devise/shared/error_messages", resource: resource %>
+    
+          <% flash.each do |message_type, message| %>
+            <%= content_tag :div, message, class: "message_type text-red-700" %>
+          <% end %>
 
           <div class="field">
             <%= f.label :email, class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
