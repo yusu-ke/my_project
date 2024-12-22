@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      post: "投稿"
+    attributes:
+      post:
+        temple_name: "寺院・史跡名"
+        location: "場所"
+        comment: "コメント"
+    errors:
+      messages:
+        blank: "を入力してください"
