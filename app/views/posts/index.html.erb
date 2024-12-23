@@ -14,7 +14,7 @@
           <div class="md:w-1/3 lg:w-1/4 overflow-hidden rounded-lg bg-white-90">
             <!-- 写真 -->
             <div class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
-              <%= image_tag "post_placeholder.png", loading: "lazy", alt: "Photo by Minh Pham", class: "absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" %>
+              <%= image_tag post.post_image_url, loading: "lazy", alt: "Photo by Minh Pham", class: "absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110",width: "300", height:"200" %>
             </div>
 
             <div class="p-4 sm:p-6">
